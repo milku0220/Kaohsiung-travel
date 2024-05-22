@@ -1,0 +1,8 @@
+<div class="popular-zones-container">
+    <div class="title">熱門行政區域</div>
+    <div class="buttons">
+        <div class="button" ng-repeat="zone in popularZones" ng-click="selectZone(zone)" ng-class="zoneClass(zone)">
+            {{ zone }}
+        </div>
+    </div>
+</div>

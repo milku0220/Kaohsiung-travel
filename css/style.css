@@ -1,0 +1,172 @@
+/* header */
+header {
+    background-image: url('../img/KH-bg.jpg');
+    height: 350px;
+    padding: 20px 0;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+}
+
+#zoneSelect {
+    background-color: rgba(255, 255, 255, 0.7); 
+    width: 50%;
+    border: 1px solid #ccc; 
+    padding: 10px; 
+    font-size: 15px;
+    border-radius: 4px;
+}
+
+.container {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+.buttons {
+    margin: 20px 0;
+}
+
+/* 熱門景點 */
+.popular-zones-container {
+    text-align: center;
+    margin: 100px 0 0;
+    background-color: rgba(240, 248, 255, 0.671);
+    width: 700px;
+    height: 100px;
+    border-radius:  4px;
+}
+.popular-zones-container .title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.button {
+    padding: 10px 45px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+.zone-a {
+    background-color: #a462d6;
+}
+.zone-b {
+    background-color: #f7754d;
+}
+.zone-c {
+    background-color: #f5b846;
+}
+.zone-d {
+    background-color: #69bdb4;
+}
+.button:hover {
+    opacity: 0.7;
+}
+
+.zone-header {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.zone-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.site {
+    width: 48%;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    box-sizing: border-box;
+}
+.site img {
+    max-width: 100%;
+}
+.image-container {
+    position: relative;
+    width: 100%;
+}
+.image-container img {
+    display: block;
+    width: 100%;
+    height: 300px;
+}
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+    color: white;
+    box-sizing: border-box;
+}
+.site-name {
+    text-align: left;
+    max-width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.site-zone {
+    text-align: right;
+    max-width: 30%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.pagination button[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+.pagination button:hover {
+    background-color: #007bffa6;
+    color: white;
+    border-color: #007bffa6;
+}
+
+/* footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    bottom: 0;
+    width: 100%;
+}
+footer a {
+    color: white;
+    text-decoration: none;
+}

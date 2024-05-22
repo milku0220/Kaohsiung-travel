@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="travelApp">
+<head>
+    <meta charset="UTF-8">
+    <title>高雄旅遊景點</title>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="services/dataService.js"></script>
+    <script src="script/directives/zoneSelect.js"></script>
+    <script src="script/directives/popularZones.js"></script>
+    <script src="script/controllers/mainController.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body ng-controller="MainController">
+    <header>
+        <h1 style="color: aliceblue; height: 80px;">高雄旅遊景點</h1>
+        <zone-select></zone-select>
+        <popular-zones></popular-zones>
+    </header>
+    <div ng-view></div>
+    <div class="container">
+        <h2>{{ selectedZone }}</h2>
+        <div class="zone-info" ng-if="currentZoneSites.length">
+            <div class="site" ng-repeat="site in currentZoneSites | limitTo: itemsPerPage : (currentPage - 1) * itemsPerPage">
+                <div class="image-container">
+                    <img ng-src="{{ site.Picture1 }}" alt="{{ site.Picdescribe1 }}">
+                    <div class="overlay">
+                        <div class="site-name">{{ site.Name }}</div>
+                        <div class="site-zone">{{ site.Zone }}</div>
+                    </div>
+                </div>
+                <p><strong>開放時間：</strong> {{ site.Opentime }}</p>
+                <p><strong>地址：</strong> {{ site.Add }}</p>
+                <p><strong>電話：</strong> {{ site.Tel }}</p>
+            </div>
+        </div>
+        <div class="pagination" ng-if="pageCount() > 1">
+            <button ng-disabled="currentPage === 1" ng-click="setPage(currentPage - 1)"> << </button>
+            <button ng-repeat="page in [].constructor(pageCount()) track by $index" ng-click="setPage($index + 1)" ng-class="{active: currentPage === ($index + 1)}">
+                {{ $index + 1 }}
+            </button>
+            <button ng-disabled="currentPage === pageCount()" ng-click="setPage(currentPage + 1)"> >> </button>
+        </div>
+    </div>
+    <footer>
+        <p>高雄市政府</p>
+        <p>資料來源：<a href="https://data.kcg.gov.tw/dataset/attractions-information">高雄市政府資料開放平台</a></p>
+    </footer>
+</body>
+</html>

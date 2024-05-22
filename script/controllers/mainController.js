@@ -26,7 +26,10 @@ app.controller('MainController', function($scope, dataService) {
 
     $scope.setPage = function(page) { // 設定當前頁數
         $scope.currentPage = page;
-        // window.scrollTo(0, 400);
+        window.scrollTo({
+            top: 400,
+            behavior: 'smooth'
+        });
     };
 
     $scope.pageCount = function() { // 回傳總頁數

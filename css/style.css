@@ -8,6 +8,11 @@ header {
     justify-content: center;
 }
 
+header h1 {
+    color: aliceblue; 
+    height: 80px;
+}
+
 #zoneSelect {
     background-color: rgba(255, 255, 255, 0.7); 
     width: 50%;

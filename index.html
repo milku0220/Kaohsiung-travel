@@ -23,7 +23,7 @@
     </header>
     
     <!-- main content -->
-    <div class="container" ng-if="!isModalOpen">
+    <div class="container" ng-if="!isSiteInfoOpen">
         <h2>{{ selectedZone }}</h2>
         
         <div class="zone-info" ng-if="currentZoneSites.length">
@@ -42,7 +42,7 @@
         </div>
     </div>
 
-    <div ng-include="'template/siteModal.html'"></div>
+    <div ng-include="'template/siteInfo.html'"></div>
 
     <!-- footer -->
     <footer>

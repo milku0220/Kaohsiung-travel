@@ -1,5 +1,7 @@
 <div class="image-container">
-    <img ng-src="{{ site.Picture1 }}" alt="{{ site.Picdescribe1 }}" ng-click="showInfo()">
+    
+    <img ng-src="{{ site.Picture1 }}" alt="{{ site.Picdescribe1 }}">
+    <div class="image-mask" ng-click="showInfo()"></div>
     <div class="overlay">
         <div class="site-name">{{ site.Name }}</div>
         <div class="site-zone">{{ site.Zone }}</div>

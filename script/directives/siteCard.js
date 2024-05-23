@@ -1,10 +1,15 @@
-// siteDirective.js
-angular.module('travelApp').directive('siteCard', function() {
+app.directive('siteCard', function() {
     return {
       restrict: 'E',
       scope: {
-        site: '='
+        site: '=',
+        onShowSiteInfo: '&'
       },
-      templateUrl: 'template/siteCard.html'
+      templateUrl: 'template/siteCard.html',
+      link: function(scope) {
+        scope.showInfo = function() {
+          scope.onShowSiteInfo({ site: scope.site });
+        };
+      }
     };
-  });
+});

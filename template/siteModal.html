@@ -1,0 +1,12 @@
+<div class="modal" ng-show="isModalOpen">
+    <div class="modal-content">
+      <span class="close" ng-click="closeModal()">&times;</span>
+      <h2>{{ selectedSite.Name }}</h2>
+      <img ng-src="{{ selectedSite.Picture1 }}" alt="{{ selectedSite.Picdescribe1 }}">
+      <p><strong>開放時間：</strong> {{ selectedSite.Opentime }}</p>
+      <p><strong>地址：</strong> {{ selectedSite.Add }}</p>
+      <p><strong>電話：</strong> {{ selectedSite.Tel }}</p>
+      <p><strong>描述：</strong> {{ selectedSite.Description }}</p> 
+    </div>
+</div>
+  

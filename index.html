@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>高雄旅遊景點</title>
+
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="app.js"></script>
     <script src="services/dataService.js"></script>
@@ -20,13 +21,16 @@
         <zone-select></zone-select>
         <popular-zones></popular-zones>
     </header>
-
+    
     <!-- main content -->
-    <div class="container">
+    <div class="container" ng-if="!isModalOpen">
         <h2>{{ selectedZone }}</h2>
         
         <div class="zone-info" ng-if="currentZoneSites.length">
-            <site-card class="site" ng-repeat="site in currentZoneSites | limitTo: itemsPerPage : (currentPage - 1) * itemsPerPage" site="site"></site-card>
+            <site-card class="site" ng-repeat="site in currentZoneSites | limitTo: itemsPerPage : (currentPage - 1) * itemsPerPage" 
+                site="site"
+                on-show-site-info="showSiteInfo(site)">
+            </site-card>
         </div>
 
         <div class="pagination" ng-if="pageCount() > 1">
@@ -37,6 +41,8 @@
             <button ng-disabled="currentPage === pageCount()" ng-click="setPage(currentPage + 1)"> >> </button>
         </div>
     </div>
+
+    <div ng-include="'template/siteModal.html'"></div>
 
     <!-- footer -->
     <footer>

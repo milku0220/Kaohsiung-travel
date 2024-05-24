@@ -18,7 +18,6 @@ app.controller('MainController', function($scope, dataService) {
 
     $scope.updateZone = function() { // 更新當前行政區域的景點
         $scope.currentZoneSites = $scope.data.filter(site => site.Zone === $scope.selectedZone);
-        // $scope.setPage(1);
         $scope.isSiteInfoOpen = false;
     };
 
@@ -26,18 +25,6 @@ app.controller('MainController', function($scope, dataService) {
         $scope.selectedZone = zone;
         $scope.updateZone();
     };
-
-    // $scope.setPage = function(page) { // 設定當前頁數
-    //     $scope.currentPage = page;
-    //     window.scrollTo({
-    //         top: 400,
-    //         behavior: 'smooth'
-    //     });
-    // };
-
-    // $scope.pageCount = function() { // 回傳總頁數
-    //     return Math.ceil($scope.currentZoneSites.length / $scope.itemsPerPage);
-    // };
 
     $scope.zoneClass = function(zone) {
         const classes = {
@@ -54,7 +41,4 @@ app.controller('MainController', function($scope, dataService) {
         $scope.selectedSite = site;
     };
 
-    $scope.closeModal = function() {
-        $scope.isSiteInfoOpen = false;
-    };
 });

@@ -12,6 +12,7 @@
     <script src="script/directives/siteCard.js"></script>
     <script src="script/controllers/mainController.js"></script>
     <script src="script/directives/pagination.js"></script>
+    <script src="script/directives/siteInfo.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -37,7 +38,9 @@
         <pagination current-page="currentPage" items-per-page="itemsPerPage" total-items="currentZoneSites.length"></pagination>
     </div>
 
-    <div ng-include="'template/siteInfo.html'"></div>
+    <div>
+        <site-info selected-site="selectedSite" is-site-info-open="isSiteInfoOpen"></site-info>
+    </div>
 
     <!-- footer -->
     <footer>

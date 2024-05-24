@@ -18,6 +18,7 @@ app.controller('MainController', function($scope, dataService) {
 
     $scope.updateZone = function() { // 更新當前行政區域的景點
         $scope.currentZoneSites = $scope.data.filter(site => site.Zone === $scope.selectedZone);
+        $scope.currentPage = 1;
         $scope.isSiteInfoOpen = false;
     };
 

@@ -209,8 +209,12 @@ footer a {
     width: 65%;
 }
 
+.modal-content div{
+    margin: 5% 7%;
+}
+
 .modal-content img {
-    width: 100%
+    width: 100%;
 }
 
 .close {

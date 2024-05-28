@@ -10,14 +10,14 @@ app.controller('MainController', function($scope, dataService) {
     $scope.itemsPerPage = 6; // 每頁顯示的景點數量
 
     dataService.getData().then(function(response) { // 取得景點資料
-        $scope.data = response.data.result.records;
-        $scope.zones = [...new Set($scope.data.map(item => item.Zone))];
+        $scope.data = response;
+        $scope.zones = Object.keys($scope.data);
 
         $scope.updateZone();
     });
 
     $scope.updateZone = function() { // 更新當前行政區域的景點
-        $scope.currentZoneSites = $scope.data.filter(site => site.Zone === $scope.selectedZone);
+        $scope.currentZoneSites = $scope.data[$scope.selectedZone];
         $scope.currentPage = 1;
         $scope.isSiteInfoOpen = false;
     };
